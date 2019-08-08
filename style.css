@@ -1,0 +1,248 @@
+:root{
+	font-size: 24px;
+}
+
+
+*{
+	letter-spacing: 1;
+	line-height: 2;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.red {
+	background-color: #E94A3F;
+  }
+  
+  .yellow {
+	background-color: #FAA040;
+  }
+  
+  .blue {
+	background-color: #5FC9F5;
+  }
+  
+  [class|="confetti"] {
+	position: absolute;
+	z-index: 6;
+  }
+
+html{
+	height: 100vh;
+	overflow: hidden;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+body{
+	position: relative;
+
+	flex: 0 1 1000px;
+
+	display: grid;
+	grid-template-columns: 1fr 5px 1fr;
+	grid-template-rows: 1fr 2fr 1fr;
+	grid-template-areas:
+	"choose choose ."
+	"your-choice gap computer-choice"
+	". rumble rumble";
+}
+
+@media all and (max-width: 800px) {
+	body{
+		grid-template-areas:
+		"choose choose choose"
+		"your-choice gap computer-choice"
+		"rumble rumble rumble";
+	}
+
+}
+div, button{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#choose{
+	grid-area: choose;
+}
+#your-choice{
+	grid-area: your-choice;
+}
+#gap{
+	grid-area: gap;	
+}
+#computer-choice{
+	grid-area: computer-choice;
+}
+#rumble{
+	grid-area: rumble;
+}
+
+#results{
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	grid-row: 0 / 3;
+	grid-column: 0 / 3;
+
+	background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7));
+
+	color: tomato;
+	font-size: calc(75px + 7vw);
+
+	opacity: 0;
+}
+
+#play-again{
+	background: #000;
+	color: #fff;
+	border: 5px solid #000;
+	border-radius: 50%;
+	padding: 1rem;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 20%;
+	bottom: 10%;
+}
+
+#play-again:hover{
+	bottom: 11%;
+}
+
+#choose, #rumble{
+	padding: 1rem;
+}
+
+form input[type="radio"] + label{
+	font-size: .75rem;
+}
+
+.basicBackground{
+	background-image: linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000);
+    background-position: 0 0,0 100%,0 0,100% 0;
+    background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
+	background-size: 30px 5px,30px 5px,5px 30px,5px 30px;
+}
+
+.actionBackground{
+	background-image: linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0);
+    background-position: 0 0,0 100%,0 0,100% 0;
+    background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
+	background-size: 30px 5px,30px 5px,5px 30px,5px 30px;
+	animation: .7s infinite normal antsMarch;
+	animation-timing-function: linear;
+}
+
+.rumbleAnimations{
+	animation: showUp .3s ease-in 1.3s 1 normal forwards, antsMarch .7s linear 1.5s infinite reverse;
+}
+
+@keyframes showUp{
+	0% {
+		background-image: linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000);
+		background-position: 0 0,0 100%,0 0,100% 0;
+		background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
+		background-size: 30px 5px,30px 5px,5px 30px,5px 30px;
+		
+	}
+	
+	100% {
+		background-image: linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0);
+		background-position: 0 0,0 100%,0 0,100% 0;
+		background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
+		background-size: 30px 5px,30px 5px,5px 30px,5px 30px;
+	}
+}
+
+@keyframes antsMarch{
+	0% {
+		background-position: 0 0,0 100%,0 0,100% 0;
+		
+	}
+	
+	100% {
+		background-position: 30px 0,-30px 100%,0 -30px,100% 30px;
+	}
+}
+
+.lineBackground {
+	background: #000;
+	background-image: linear-gradient(to bottom, #000 15px, #fff 15px 30px, #000 30px 45px, #fff 45px 60px, #000 60px 75px, #fff 75px 90px, #000 90px 105px, #fff 105px 120px, #000 120px 135px, #fff 135px 150px, #000 150px 165px, #fff 165px 180px, #000 180px 195px);
+	background-repeat: no-repeat;
+	background-size: 100% 200%;
+	background-position: 0px -195px;
+}
+
+.lineBackgroundAnimate{
+	animation-name: lineBackgroundAnimate;
+	animation-duration: 4s;
+	animation-iteration-count: linear;
+	animation-fill-mode: forwards;
+}
+
+@keyframes lineBackgroundAnimate {
+	0% {
+		background-position: 0px -195px;
+	}
+	100% {
+		background-position: 0 400;
+	}
+}
+
+.rockbackground{
+	background: url(images/rock.svg);
+	background: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url(https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.paperbackground{
+	background: url(images/paper.svg);
+	background: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url(http://tmib.com/wp-content/uploads/2014/08/stack-of-paper.jpg);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.scissorsbackground{
+	background: url(images/scissors.svg);
+	background: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url(https://theshopcompany.com/pub/media/catalog/product/cache/afad95d7734d2fa6d0a8ba78597182b7/s/8/s8_angle_1.jpg);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.nobackground{
+	background: white;
+}
+
+.hidden{
+	display: none;
+}
+.resultsAnimate{
+	animation: fadeIn 1s ease-in 1s 1 normal forwards;
+}
+
+@keyframes fadeIn {
+
+	from {
+		opacity: 0
+	  }
+	
+	  to {
+		opacity: 1;
+	  }
+}
+

@@ -1,0 +1,244 @@
+<!DOCTYPE: html>
+
+<html class="confettidrop">
+
+<head>
+	<meta charset="utf-8">
+	<title>Rock Paper Scissors | A Beginner Project</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,300i,400,400i,500,500i,600,600i,700,800,900&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="An amateur attempt at ROCK PAPER SCISSORS" />
+	<meta name="author" content="Samantha Siefert">
+</head>
+
+<body>
+
+	<div id="choose" class="basicBackground actionBackground">
+		Choose weapon
+			<form id="makeChoice">	
+				<input onchange="yourChoiceBackground();actionBackgroundSwitcharoo();" id="radio-rock" class="input" type="radio" name="choice" value="rock"><label for="rock"> rock</label>
+				<input onchange="yourChoiceBackground();actionBackgroundSwitcharoo();" id="radio-paper" class="input" type="radio" name="choice" value="paper"><label for="paper"> paper</label>
+				<input onchange="yourChoiceBackground();actionBackgroundSwitcharoo();" id="radio-scissors" class="input" type="radio" name="choice" value="scissors"><label for="scissors"> scissors</label>
+			  </form> 
+	</div>
+
+	<div id="your-choice">you</div>
+
+	<div id="gap" class="lineBackground">vs</div>
+	
+	<div id="computer-choice">Me</div>
+	
+	<div onclick="removeActionBackground(); playGame();" id="rumble" class="basicBackground">Rumble</div>
+
+	<div id="results" class="hidden">
+			<p id="results-p"></p>
+			<button id="play-again" value="Refresh Page" onClick="window.location.reload();">play<br>again</button>
+	</div>
+	
+	
+	<script>
+			function yourChoiceBackground () {
+				var radioRock = document.getElementById("radio-rock");
+				var radioPaper = document.getElementById("radio-paper");
+				var radioScissors = document.getElementById("radio-scissors");
+				var yourChoice = document.getElementById("your-choice");
+				if (radioRock.checked == true){
+					yourChoice.classList.add("rockbackground");
+					yourChoice.classList.remove("paperbackground");
+					yourChoice.classList.remove("scissorsbackground");
+			 		}
+				
+			 	else if (radioPaper.checked == true){
+					yourChoice.classList.add("paperbackground");
+					yourChoice.classList.remove("rockbackground");
+					yourChoice.classList.remove("scissorsbackground");
+			 		}
+				
+				else if (radioScissors.checked == true){
+					yourChoice.classList.add("scissorsbackground");
+					yourChoice.classList.remove("paperbackground");
+					yourChoice.classList.remove("rockbackground");
+			 		}
+				
+				else{
+					yourChoice.classList.add("nobackground");
+				}
+			}
+
+			function actionBackgroundSwitcharoo() {
+				var choose = document.getElementById("choose");
+				var gap = document.getElementById("gap");
+				var rumble = document.getElementById("rumble");
+			
+				var input = document.getElementsByClassName("input");
+				
+				for(var i=0; i<input.length; i++){
+					if (input[i].checked == true){
+					choose.classList.remove("actionBackground");
+					gap.classList.add("lineBackgroundAnimate");	
+					rumble.classList.add("rumbleAnimations");
+					}
+				}
+			}
+
+			function removeActionBackground() {
+				var rumble = document.getElementById("rumble");
+				rumble.classList.remove("rumbleAnimations");
+			}
+
+			function playGame(){
+					userChoice = getUserChoice();
+
+					if (userChoice == 'rock' || userChoice == 'paper' || userChoice == 'scissors'){
+						compChoice = getComputerChoice();
+						console.log('Computer Choice =' + compChoice)
+
+						determineWinner(userChoice,compChoice);
+						} else {
+						alert('You must choose a WEAPON');
+					}
+
+					function getUserChoice() {
+							var input = document.getElementsByName("choice");
+							
+							for(var i=0; i < input.length; i++){
+							 if (input[i].checked){
+								console.log('User Choice = ' + input[i].value)
+								return input[i].value
+							 }
+
+							}
+					}
+
+					function getComputerChoice() {
+							randomNumber = Math.floor(Math.random() * 3);
+							switch (randomNumber){
+								case 0:
+									document.getElementById('computer-choice').classList.add('rockbackground');
+									document.getElementById('computer-choice').classList.remove('paperbackground');
+									document.getElementById('computer-choice').classList.remove('scissorsbackground');
+									return 'rock';
+								case 1:
+									document.getElementById('computer-choice').classList.add('paperbackground');
+									document.getElementById('computer-choice').classList.remove('rockbackground');
+									document.getElementById('computer-choice').classList.remove('scissorsbackground');
+								return 'paper';
+								case 2: 
+								document.getElementById('computer-choice').classList.add('scissorsbackground');
+								document.getElementById('computer-choice').classList.remove('paperbackground');
+								document.getElementById('computer-choice').classList.remove('rockbackground');
+								return 'scissors';
+							};
+						}
+
+					function determineWinner(userChoice, compChoice){
+						if (userChoice == compChoice){
+							
+							document.getElementById('results').classList.remove('hidden');
+							document.getElementById('results').classList.add('resultsAnimate');
+							document.getElementById('results-p').innerHTML = "TIE" ;
+						}
+						else if (userChoice == 'rock' && compChoice == 'paper'){
+							
+							document.getElementById('results').classList.remove('hidden');
+							document.getElementById('results').classList.add('resultsAnimate');
+							document.getElementById('results-p').innerHTML = "LOSE" ;
+						}
+						else if (userChoice == 'rock' && compChoice == 'scissors'){
+					
+							document.getElementById('results').classList.remove('hidden');
+							document.getElementById('results').classList.add('resultsAnimate');
+							document.getElementById('results-p').innerHTML = "WIN" ;
+							confetti();
+						}
+						else if (userChoice == 'paper' && compChoice == 'rock'){
+
+							document.getElementById('results').classList.remove('hidden');
+							document.getElementById('results').classList.add('resultsAnimate');
+							document.getElementById('results-p').innerHTML = "WIN" ;
+							confetti();
+						}
+						else if (userChoice == 'paper' && compChoice == 'scissors'){
+							document.getElementById('results').classList.remove('hidden');
+							document.getElementById('results').classList.add('resultsAnimate');
+							document.getElementById('results-p').innerHTML = "LOSE" ;
+						}
+						else if (userChoice == 'scissors' && compChoice == 'paper'){
+							
+							document.getElementById('results').classList.remove('hidden');
+							document.getElementById('results').classList.add('resultsAnimate');
+							document.getElementById('results-p').innerHTML = "WIN" ;
+							confetti();
+						}
+						else if (userChoice == 'scissors' && compChoice == 'rock'){
+							document.getElementById('results').classList.remove('hidden');
+							document.getElementById('results').classList.add('resultsAnimate');
+							document.getElementById('results-p').innerHTML = "LOSE" ;
+						}
+						else{
+							alert('Oh no!');
+						}
+					}
+				}
+
+				function confetti(){
+
+					for (var i = 0; i < 150; i++) {
+							create(i);
+						}
+
+						function create(i) {
+							var width = Math.random() * 8;
+							var height = width * 0.4;
+							var colourIdx = Math.ceil(Math.random() * 3);
+							var colour = "red";
+							switch(colourIdx) {
+								case 1:
+								colour = "yellow";
+								break;
+								case 2:
+								colour = "blue";
+								break;
+								default:
+								colour = "red";
+						}
+						
+						$('<div class="confetti-'+i+' '+colour+'"></div>').css({
+							"width" : width+"px",
+							"height" : height+"px",
+							"top" : -Math.random()*20+"%",
+							"left" : Math.random()*100+"%",
+							"opacity" : Math.random()+0.5,
+							"transform" : "rotate("+Math.random()*360+"deg)"
+						}).appendTo('.confettidrop');  
+						
+						drop(i);
+						}
+
+						function drop(x) {
+						$('.confetti-'+x).animate({
+							top: "100%",
+							left: "+="+Math.random()*15+"%"
+						}, Math.random()*3000 + 3000, function() {
+							reset(x);
+						});
+						}
+
+						function reset(x) {
+						$('.confetti-'+x).animate({
+							"top" : -Math.random()*20+"%",
+							"left" : "-="+Math.random()*15+"%"
+						}, 0, function() {
+							drop(x);             
+						});
+						}
+				}
+
+</script>
+</body>
+
+</html>
