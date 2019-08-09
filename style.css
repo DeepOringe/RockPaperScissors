@@ -57,6 +57,8 @@ body{
 
 @media all and (max-width: 800px) {
 	body{
+		height: 100%;
+
 		grid-template-areas:
 		"choose choose choose"
 		"your-choice gap computer-choice"
@@ -106,6 +108,7 @@ div, button{
 #play-again{
 	background: #000;
 	color: #fff;
+	font-size: .75rem;
 	border: 5px solid #000;
 	border-radius: 50%;
 	padding: 1rem;
@@ -114,6 +117,7 @@ div, button{
 	position: absolute;
 	left: 20%;
 	bottom: 10%;
+
 }
 
 #play-again:hover{
@@ -126,6 +130,10 @@ div, button{
 
 form input[type="radio"] + label{
 	font-size: .75rem;
+}
+
+p.versus{
+	z-index: 1;	
 }
 
 .basicBackground{
