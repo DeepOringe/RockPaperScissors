@@ -153,7 +153,7 @@ p.versus{
 }
 
 .rumbleAnimations{
-	animation: showUp .3s ease-in 1.3s 1 normal forwards, antsMarch .7s linear 1.5s infinite reverse;
+	animation: showUp .3s ease-in 1.3s 1 normal forwards, antsMarch .7s linear .1s infinite reverse;
 }
 
 @keyframes showUp{
@@ -240,7 +240,7 @@ p.versus{
 	display: none;
 }
 .resultsAnimate{
-	animation: fadeIn 1s ease-in 1s 1 normal forwards;
+	animation: fadeIn 1s ease-in .5s 1 normal forwards;
 }
 
 @keyframes fadeIn {
