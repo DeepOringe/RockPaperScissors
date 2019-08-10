@@ -1,3 +1,5 @@
+/* Reset & generic styles */
+
 :root{
 	font-size: 24px;
 }
@@ -30,6 +32,8 @@
 	position: absolute;
 	z-index: 6;
   }
+
+/* Layout */
 
 html{
 	height: 100vh; /* Fallback for browsers that do not support Custom Properties */
@@ -70,6 +74,14 @@ body{
 
 }
 
+@media all and (max-width: 600px) {
+	body{
+		height: 85vh;
+	}
+}
+
+/* Specific styles */
+
 div, button{
 	display: flex;
 	flex-direction: column;
@@ -105,7 +117,6 @@ p.versus{
 	z-index: 1;	
 }
 
-
 #results{
 	z-index: 1;
 	width: 100%;
@@ -122,7 +133,7 @@ p.versus{
 	opacity: 0;
 }
 
-#play-again{
+button.play-again{
 	background: #000;
 	color: #fff;
 	font-size: .75rem;
@@ -137,8 +148,14 @@ p.versus{
 
 }
 
-#play-again:hover{
+button.play-again:hover{
 	bottom: 11%;
+}
+
+/* Animations */
+
+.hidden{
+	display: none;
 }
 
 .basicBackground{
@@ -158,7 +175,8 @@ p.versus{
 }
 
 .rumbleAnimations{
-	animation: showUp .3s ease-in .5s 1 normal forwards, antsMarch .7s linear .7s infinite reverse;
+	animation: showUp .3s ease-in .5s 1 normal forwards, 
+	antsMarch .7s linear .7s infinite reverse;
 }
 
 @keyframes showUp{
@@ -241,9 +259,6 @@ p.versus{
 	background: white;
 }
 
-.hidden{
-	display: none;
-}
 .resultsAnimate{
 	animation: fadeIn 1s ease-in .5s 1 normal forwards;
 }

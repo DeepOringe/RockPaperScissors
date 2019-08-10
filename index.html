@@ -20,7 +20,7 @@
 <body>
 
 	<div id="choose" class="basicBackground actionBackground">
-		Choose weapon
+		<p>Choose weapon</p>
 		<form id="makeChoice">
 			<input onchange="yourChoiceBackground();actionBackgroundSwitcharoo();" id="radio-rock" class="input"
 				type="radio" name="choice" value="rock"><label for="rock"> rock</label></input>
@@ -33,26 +33,19 @@
 
 	<div id="your-choice">you</div>
 
-	<div id="gap" class="lineBackground">
-		<p class="versus">vs</p>
-	</div>
+	<div id="gap" class="lineBackground"><p class="versus">vs</p></div>
 
-	<div id="computer-choice">Me</div>
+	<div id="computer-choice"><p>Me</p></div>
 
-	<div onclick="removeActionBackground(); playGame();" id="rumble" class="basicBackground">Rumble</div>
+	<div onclick="removeActionBackground(); playGame();" id="rumble" class="basicBackground"><p>Rumble</p></div>
 
 	<div id="results" class="hidden">
 		<p id="results-p"></p>
-		<button id="play-again" value="Refresh Page" onClick="window.location.reload();">play<br>again</button>
+		<button class="play-again" value="Refresh Page" onClick="window.location.reload();">play<br>again</button>
 	</div>
 
 
 	<script>
-		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-		let vh = window.innerHeight * 0.01;
-		// Then we set the value in the --vh custom property to the root of the document
-		document.documentElement.style.setProperty('--vh', `${vh}px`);
-
 		function yourChoiceBackground() {
 			var radioRock = document.getElementById("radio-rock");
 			var radioPaper = document.getElementById("radio-paper");
@@ -197,6 +190,7 @@
 			}
 		}
 
+		/* Confetti effect for wins borrowed from this cool lady-- https://codepen.io/fionnachan/pens/public */
 		function confetti() {
 
 			for (var i = 0; i < 150; i++) {
@@ -250,7 +244,7 @@
 			}
 		}
 
-	</script>
+</script>
 </body>
 
 </html>
