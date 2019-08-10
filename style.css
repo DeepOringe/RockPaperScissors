@@ -71,6 +71,9 @@ body{
 }
 
 @media all and (max-width: 800px) {
+	html{
+		height: 80vh;
+	}
 	body{
 		height: 80vh;
 	}
