@@ -70,6 +70,12 @@ body{
 
 }
 
+@media all and (max-width: 800px) {
+	body{
+		height: 80vh;
+	}
+}
+
 div, button{
 	display: flex;
 	flex-direction: column;
