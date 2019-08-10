@@ -69,11 +69,6 @@ body{
 	}
 
 }
-@media all and (max-width: 600px) {
-	body{
-		height: 80vh;
-	}
-}
 
 div, button{
 	display: flex;
