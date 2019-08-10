@@ -1,7 +1,7 @@
 :root{
 	font-size: 24px;
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 400px) {
 	:root {
 		font-size: 16px;
 	}
@@ -59,9 +59,17 @@ body{
 	". rumble rumble";
 }
 
+@media all and (max-width: 400px) {
+	body{
+		grid-template-rows: 1fr 1.5fr 1fr;	
+	}
+}
+
 @media all and (max-width: 800px) {
 	body{
 		height: 100%;
+
+		grid-template-rows: 1fr 1.5fr 1fr;
 
 		grid-template-areas:
 		"choose choose choose"
@@ -92,6 +100,19 @@ div, button{
 #rumble{
 	grid-area: rumble;
 }
+
+#choose, #rumble{
+	padding: 1em;
+}
+
+form input[type="radio"] + label{
+	font-size: .75rem;
+}
+
+p.versus{
+	z-index: 1;	
+}
+
 
 #results{
 	z-index: 1;
@@ -126,18 +147,6 @@ div, button{
 
 #play-again:hover{
 	bottom: 11%;
-}
-
-#choose, #rumble{
-	padding: 1rem;
-}
-
-form input[type="radio"] + label{
-	font-size: .75rem;
-}
-
-p.versus{
-	z-index: 1;	
 }
 
 .basicBackground{
