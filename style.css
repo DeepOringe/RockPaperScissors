@@ -61,7 +61,7 @@ body{
 
 @media all and (max-width: 400px) {
 	body{
-		grid-template-rows: 1fr 1.5fr 1fr;	
+		grid-template-rows: 1fr 1fr 1fr;	
 	}
 	#choose, #rumble{
 		padding: .5em;
