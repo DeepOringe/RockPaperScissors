@@ -1,7 +1,11 @@
 :root{
 	font-size: 24px;
 }
-
+@media all and (max-width: 600px) {
+	:root {
+		font-size: 16px;
+	}
+}
 
 *{
 	letter-spacing: 1;
