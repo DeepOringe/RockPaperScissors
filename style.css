@@ -56,8 +56,6 @@ body{
 	". rumble rumble";
 }
 
-
-
 @media all and (max-width: 800px) {
 	body{
 		height: 100vh;
@@ -70,6 +68,11 @@ body{
 		"rumble rumble rumble";
 	}
 
+}
+@media all and (max-width: 600px) {
+	body{
+		height: 80vh;
+	}
 }
 
 div, button{
