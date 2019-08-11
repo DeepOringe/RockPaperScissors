@@ -62,7 +62,7 @@ body{
 
 @media all and (max-width: 800px) {
 	body{
-		height: 100vh;
+		height: 100%;
 
 		grid-template-rows: 1fr 2fr 1fr;
 
@@ -72,12 +72,6 @@ body{
 		"rumble rumble rumble";
 	}
 
-}
-
-@media all and (max-width: 600px) {
-	body{
-		height: 85vh;
-	}
 }
 
 /* Specific styles */
@@ -207,10 +201,13 @@ button.play-again:hover{
 	}
 }
 
+/* Abandoning this effect for now... 
+
+
 .lineBackground {
 	background: #000;
 	background-image: linear-gradient(to bottom, #000 15px, #fff 15px 30px, #000 30px 45px, #fff 45px 60px, #000 60px 75px, #fff 75px 90px, #000 90px 105px, #fff 105px 120px, #000 120px 135px, #fff 135px 150px, #000 150px 165px, #fff 165px 180px, #000 180px 195px);
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-size: 100% 200%;
 	background-position: 0px -195px;
 }
@@ -220,7 +217,7 @@ button.play-again:hover{
 	animation-duration: 4s;
 	animation-iteration-count: linear;
 	animation-fill-mode: forwards;
-}
+} */
 
 @keyframes lineBackgroundAnimate {
 	0% {
