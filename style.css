@@ -74,7 +74,7 @@ body{
 
 @media all and (max-width: 600px) {
 	body{
-		grid-template-rows: auto;
+		height: 70%;
 	}
 
 }
