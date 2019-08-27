@@ -112,7 +112,7 @@ div, button{
 
 @media all and (max-width: 600px) {
 	#choose, #rumble{
-		padding: .25em;
+		padding: 10px;
 	}
 
 }
