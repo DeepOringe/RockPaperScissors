@@ -64,8 +64,6 @@ body{
 	body{
 		height: 100%;
 
-		grid-template-rows: 1fr 2fr 1fr;
-
 		grid-template-areas:
 		"choose choose choose"
 		"your-choice gap computer-choice"
@@ -76,7 +74,7 @@ body{
 
 @media all and (max-width: 600px) {
 	body{
-		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-rows: auto;
 	}
 
 }
