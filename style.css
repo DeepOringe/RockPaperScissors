@@ -64,12 +64,19 @@ body{
 	body{
 		height: 100%;
 
-		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 2fr 1fr;
 
 		grid-template-areas:
 		"choose choose choose"
 		"your-choice gap computer-choice"
 		"rumble rumble rumble";
+	}
+
+}
+
+@media all and (max-width: 600px) {
+	body{
+		grid-template-rows: 1fr 1fr 1fr;
 	}
 
 }
@@ -101,6 +108,13 @@ div, button{
 
 #choose, #rumble{
 	padding: 1em;
+}
+
+@media all and (max-width: 600px) {
+	#choose, #rumble{
+		padding: .25em;
+	}
+
 }
 
 form input[type="radio"] + label{
