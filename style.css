@@ -87,15 +87,8 @@ body{
 
 @media all and (max-width: 600px) {
 	body{
-		grid-template-rows: auto;
+		margin: 1em 0 1em 0;
 	}
-	#choose{
-		margin-top: 1em;
-	}
-	#rumble{
-		margin-bottom: 1em;
-	}
-
 
 }
 
