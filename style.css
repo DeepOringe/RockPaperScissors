@@ -4,6 +4,14 @@
 	font-size: 24px;
 }
 
+@media all and (max-width: 600px) {
+	:root{
+		font-size: 16px;
+	}
+
+}
+
+
 *{
 	letter-spacing: 1;
 	line-height: 2;
@@ -11,11 +19,13 @@
 	margin: 0;
 	padding: 0;
 	
+	/* Default text styles */
 	font-family: 'Raleway', sans-serif;
 	font-weight: 800;
 	text-transform: uppercase;
 }
 
+/* Confetti styles */
 .red {
 	background-color: #E94A3F;
   }
@@ -36,8 +46,7 @@
 /* Layout */
 
 html{
-	height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-	height: calc(var(--vh, 1vh) * 100);
+	height: 100vh; 
 
 	overflow: hidden;
 
@@ -46,6 +55,8 @@ html{
 	align-items: center;
 }
 
+
+/*Set grid*/
 body{
 	position: relative;
 
@@ -55,6 +66,7 @@ body{
 	grid-template-columns: 1fr 5px 1fr;
 	grid-template-rows: 1fr 2fr 1fr;
 	grid-template-areas:
+	/* Offset styles for desktop */
 	"choose choose ."
 	"your-choice gap computer-choice"
 	". rumble rumble";
@@ -65,6 +77,7 @@ body{
 		height: 100%;
 
 		grid-template-areas:
+		/* Full column layout for tablet / mobile */
 		"choose choose choose"
 		"your-choice gap computer-choice"
 		"rumble rumble rumble";
@@ -72,22 +85,7 @@ body{
 
 }
 
-@media all and (max-width: 600px) {
-	body{
-		height: 90%;
-	}
-
-}
-
-/* Specific styles */
-
-div, button{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
+/*Position elements within grid */
 #choose{
 	grid-area: choose;
 }
@@ -104,20 +102,23 @@ div, button{
 	grid-area: rumble;
 }
 
-#choose, #rumble{
+
+
+/* Specific styles */
+
+div, button{
+	/* Make all segments vertical / horizontal centered */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#choose, #rumble, button.play-again{
 	padding: 1em;
 }
 
-@media all and (max-width: 600px) {
-	#choose, #rumble{
-		padding: none;
-	}
 
-}
-
-form input[type="radio"] + label{
-	font-size: .75rem;
-}
 
 p.versus{
 	z-index: 1;	
@@ -139,19 +140,22 @@ p.versus{
 	opacity: 0;
 }
 
+button.play-again, form input[type="radio"] + label{
+	font-size: .75rem;
+}
+
 button.play-again{
 	background: #000;
 	color: #fff;
-	font-size: .75rem;
 	border: 5px solid #000;
 	border-radius: 50%;
-	padding: 1rem;
+
 	height: 100px;
 	width: 100px;
+	
 	position: absolute;
 	left: 20%;
 	bottom: 10%;
-
 }
 
 button.play-again:hover{
@@ -160,6 +164,8 @@ button.play-again:hover{
 
 /* Animations */
 
+
+/* Dotted border animations*/
 .hidden{
 	display: none;
 }
@@ -213,24 +219,6 @@ button.play-again:hover{
 	}
 }
 
-/* Abandoning this effect for now... 
-
-
-.lineBackground {
-	background: #000;
-	background-image: linear-gradient(to bottom, #000 15px, #fff 15px 30px, #000 30px 45px, #fff 45px 60px, #000 60px 75px, #fff 75px 90px, #000 90px 105px, #fff 105px 120px, #000 120px 135px, #fff 135px 150px, #000 150px 165px, #fff 165px 180px, #000 180px 195px);
-	background-repeat: repeat-y;
-	background-size: 100% 200%;
-	background-position: 0px -195px;
-}
-
-.lineBackgroundAnimate{
-	animation-name: lineBackgroundAnimate;
-	animation-duration: 4s;
-	animation-iteration-count: linear;
-	animation-fill-mode: forwards;
-} */
-
 @keyframes lineBackgroundAnimate {
 	0% {
 		background-position: 0px -195px;
@@ -240,6 +228,8 @@ button.play-again:hover{
 	}
 }
 
+
+/* Image backgrounds */
 .rockbackground{
 	background: url(images/rock.svg);
 	background: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url(https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/Limestone-060-RD010-C-SH_by22j3.jpg);
@@ -268,6 +258,8 @@ button.play-again:hover{
 	background: white;
 }
 
+
+/* Animations for results*/
 .resultsAnimate{
 	animation: fadeIn 1s ease-in .5s 1 normal forwards;
 }
