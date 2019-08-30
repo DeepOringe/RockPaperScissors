@@ -86,8 +86,8 @@ body{
 }
 
 @media all and (max-width: 600px) {
-	body{
-		margin: 1em 0 1em 0;
+	html{
+		padding: 1rem;
 	}
 
 }
