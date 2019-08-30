@@ -4,13 +4,6 @@
 	font-size: 24px;
 }
 
-@media all and (max-width: 600px) {
-	:root{
-		font-size: 16px;
-	}
-
-}
-
 
 *{
 	letter-spacing: 1;
@@ -61,6 +54,7 @@ body{
 	position: relative;
 
 	flex: 0 1 1000px;
+	min-height: 60%;
 
 	display: grid;
 	grid-template-columns: 1fr 5px 1fr;
@@ -73,6 +67,10 @@ body{
 }
 
 @media all and (max-width: 800px) {
+	html{
+		padding: 1rem;
+	}
+	
 	body{
 		height: 100%;
 
@@ -81,16 +79,6 @@ body{
 		"choose choose choose"
 		"your-choice gap computer-choice"
 		"rumble rumble rumble";
-	}
-
-}
-
-@media all and (max-width: 600px) {
-	html{
-		padding: 1rem;
-	}
-	#choose, #rumble{
-		padding: none;
 	}
 
 }
@@ -125,12 +113,6 @@ div, button{
 	justify-content: center;
 	align-items: center;
 }
-
-#choose, #rumble, button.play-again{
-	padding: 1rem;
-}
-
-
 
 p.versus{
 	z-index: 1;	
