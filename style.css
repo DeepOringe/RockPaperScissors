@@ -89,6 +89,9 @@ body{
 	html{
 		padding: 1rem;
 	}
+	#choose, #rumble{
+		padding: none;
+	}
 
 }
 
@@ -124,7 +127,7 @@ div, button{
 }
 
 #choose, #rumble, button.play-again{
-	padding: 1em;
+	padding: 1rem;
 }
 
 
