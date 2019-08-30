@@ -72,7 +72,7 @@ body{
 	}
 	
 	body{
-		height: 90%;
+		height: 100%;
 
 		grid-template-areas:
 		/* Full column layout for tablet / mobile */
