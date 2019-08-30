@@ -134,11 +134,13 @@ p.versus{
 	grid-row: 0 / 3;
 	grid-column: 0 / 3;
 
+	/* Semi-transparent background allows game choices to show through */
 	background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7));
 
 	color: tomato;
 	font-size: calc(75px + 7vw);
 
+	/* Lets results div fade in from default hidden */
 	opacity: 0;
 }
 
@@ -167,63 +169,6 @@ button.play-again:hover{
 
 
 /* Animations */
-
-/* Dotted border animations*/
-.hidden{
-	display: none;
-}
-
-.basicBackground{
-	background-image: linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000);
-    background-position: 0 0,0 100%,0 0,100% 0;
-    background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
-	background-size: 30px 5px,30px 5px,5px 30px,5px 30px;
-}
-
-.actionBackground{
-	background-image: linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0);
-    background-position: 0 0,0 100%,0 0,100% 0;
-    background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
-	background-size: 30px 5px,30px 5px,5px 30px,5px 30px;
-	animation: .7s infinite normal antsMarch;
-	animation-timing-function: linear;
-}
-
-.rumbleAnimations{
-	animation: showUp .3s ease-in .5s 1 normal forwards, 
-	antsMarch .7s linear .7s infinite reverse;
-}
-
-@keyframes showUp{
-
-	0% {
-		background-image: linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000);
-		background-position: 0 0,0 100%,0 0,100% 0;
-		background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
-		background-size: 30px 5px,30px 5px,5px 30px,5px 30px;
-		
-	}
-	
-	100% {
-		background-image: linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0);
-		background-position: 0 0,0 100%,0 0,100% 0;
-		background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
-		background-size: 30px 5px,30px 5px,5px 30px,5px 30px;
-	}
-} 
-
-@keyframes antsMarch{
-	0% {
-		background-position: 0 0,0 100%,0 0,100% 0;
-		
-	}
-	
-	100% {
-		background-position: 30px 0,-30px 100%,0 -30px,100% 30px;
-	}
-}
-
-
 
 /* Image backgrounds */
 .rockbackground{
@@ -254,8 +199,49 @@ button.play-again:hover{
 	background: white;
 }
 
+/* CTA dotted border animations*/
+.standardBackgroundBorder{
+	background-image: linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000);
+    background-position: 0 0,0 100%,0 0,100% 0;
+    background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
+	background-size: 30px 5px,30px 5px,5px 30px,5px 30px;
+}
+
+.actionBackgroundBorder{
+	background-image: linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0);
+    background-position: 0 0,0 100%,0 0,100% 0;
+    background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
+	background-size: 30px 5px,30px 5px,5px 30px,5px 30px;
+}
+
+.actionBackgroundAnimate{
+	animation: .7s infinite normal antsMarch;
+	animation-timing-function: linear;
+}
+
+.actionBackgroundAnimateReverse{
+	animation: .7s infinite normal antsMarch;
+	animation-timing-function: linear;
+	
+	animation-direction: reverse; 
+}
+
+@keyframes antsMarch{
+	0% {
+		background-position: 0 0,0 100%,0 0,100% 0;
+		
+	}
+	
+	100% {
+		background-position: 30px 0,-30px 100%,0 -30px,100% 30px;
+	}
+}
 
 /* Animations for results*/
+.hidden{
+	/* Default to keep the results DIV hidden until game is played */
+	display: none;
+}
 .resultsAnimate{
 	animation: fadeIn 1s ease-in .5s 1 normal forwards;
 }

@@ -19,7 +19,7 @@
 
 <body>
 
-	<div id="choose" class="basicBackground actionBackground">
+	<div id="choose" class="standardBackgroundBorder actionBackgroundBorder actionBackgroundAnimate">
 		<p>Choose weapon</p>
 		<form id="makeChoice">
 			<input onchange="yourChoiceBackground();actionBackgroundSwitcharoo();" id="radio-rock" class="input"
@@ -37,7 +37,7 @@
 
 	<div id="computer-choice"><p>Me</p></div>
 
-	<div onclick="removeActionBackground(); playGame();" id="rumble" class="basicBackground"><p>Rumble</p></div>
+	<div onclick="removeActionBackground(); playGame();" id="rumble" class="standardBackgroundBorder"><p>Rumble</p></div>
 
 	<div id="results" class="hidden">
 		<p id="results-p"></p>
@@ -46,6 +46,7 @@
 
 
 	<script>
+		// Set image backgrounds
 		function yourChoiceBackground() {
 			var radioRock = document.getElementById("radio-rock");
 			var radioPaper = document.getElementById("radio-paper");
@@ -74,6 +75,7 @@
 			}
 		}
 
+		// Move CTA animation
 		function actionBackgroundSwitcharoo() {
 			var choose = document.getElementById("choose");
 			var rumble = document.getElementById("rumble");
@@ -82,17 +84,19 @@
 
 			for (var i = 0; i < input.length; i++) {
 				if (input[i].checked == true) {
-					choose.classList.remove("actionBackground");
-					rumble.classList.add("actionBackground");
+					choose.classList.remove("actionBackgroundBorder");
+					rumble.classList.add("actionBackgroundBorder","actionBackgroundAnimateReverse");
 				}
 			}
 		}
 
+		// Remove CTA animations
 		function removeActionBackground() {
 			var rumble = document.getElementById("rumble");
-			rumble.classList.remove("rumbleAnimations");
+			rumble.classList.remove("actionBackgroundBorder","actionBackgroundAnimateReverse");
 		}
 
+		// Get results and Display results
 		function playGame() {
 			userChoice = getUserChoice();
 
