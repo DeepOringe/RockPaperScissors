@@ -87,6 +87,7 @@ body{
 
 @media all and (max-width: 800px) {
 	body{
+		height: 90vh;
 		grid-template-rows: auto;
 	}
 
