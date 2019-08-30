@@ -33,7 +33,7 @@
 
 	<div id="your-choice">you</div>
 
-	<div id="gap" class="lineBackground"><p class="versus">vs</p></div>
+	<div id="gap"><p class="versus">vs</p></div>
 
 	<div id="computer-choice"><p>Me</p></div>
 
@@ -76,7 +76,6 @@
 
 		function actionBackgroundSwitcharoo() {
 			var choose = document.getElementById("choose");
-			var gap = document.getElementById("gap");
 			var rumble = document.getElementById("rumble");
 
 			var input = document.getElementsByClassName("input");
@@ -84,8 +83,7 @@
 			for (var i = 0; i < input.length; i++) {
 				if (input[i].checked == true) {
 					choose.classList.remove("actionBackground");
-					gap.classList.add("lineBackgroundAnimate");
-					rumble.classList.add("rumbleAnimations");
+					rumble.classList.add("actionBackground");
 				}
 			}
 		}

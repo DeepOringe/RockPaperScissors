@@ -1,9 +1,11 @@
+
+
+
 /* Reset & generic styles */
 
 :root{
 	font-size: 24px;
 }
-
 
 *{
 	letter-spacing: 1;
@@ -17,6 +19,8 @@
 	font-weight: 800;
 	text-transform: uppercase;
 }
+
+
 
 /* Confetti styles */
 .red {
@@ -36,8 +40,11 @@
 	z-index: 6;
   }
 
+
+
 /* Layout */
 
+/*Center content*/
 html{
 	height: 100%; 
 
@@ -49,7 +56,8 @@ html{
 }
 
 
-/*Set grid*/
+
+/*Set grid for content*/
 body{
 	position: relative;
 
@@ -187,6 +195,7 @@ button.play-again:hover{
 }
 
 @keyframes showUp{
+
 	0% {
 		background-image: linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000);
 		background-position: 0 0,0 100%,0 0,100% 0;
@@ -201,7 +210,7 @@ button.play-again:hover{
 		background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
 		background-size: 30px 5px,30px 5px,5px 30px,5px 30px;
 	}
-}
+} 
 
 @keyframes antsMarch{
 	0% {
@@ -214,14 +223,6 @@ button.play-again:hover{
 	}
 }
 
-@keyframes lineBackgroundAnimate {
-	0% {
-		background-position: 0px -195px;
-	}
-	100% {
-		background-position: 0 400;
-	}
-}
 
 
 /* Image backgrounds */
