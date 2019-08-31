@@ -219,7 +219,8 @@ button.play-again:hover{
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-direction: normal;
+	
+	animation-direction: normal;
 }
 
 .actionBackgroundAnimateReverse{
@@ -250,7 +251,7 @@ button.play-again:hover{
 .resultsAnimate{
 	animation-name: fadeIn;
     animation-duration: 1s;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease;
     animation-delay: .5s;
     animation-iteration-count: 1;
     animation-direction: normal;
