@@ -215,13 +215,18 @@ button.play-again:hover{
 }
 
 .actionBackgroundAnimate{
-	animation: .7s infinite normal antsMarch;
-	animation-timing-function: linear;
+	animation-name: antsMarch;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
 }
 
 .actionBackgroundAnimateReverse{
-	animation: .7s infinite normal antsMarch;
-	animation-timing-function: linear;
+	animation-name: antsMarch;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 	
 	animation-direction: reverse; 
 }
@@ -243,7 +248,13 @@ button.play-again:hover{
 	display: none;
 }
 .resultsAnimate{
-	animation: fadeIn 1s ease-in .5s 1 normal forwards;
+	animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-delay: .5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
 }
 
 @keyframes fadeIn {
